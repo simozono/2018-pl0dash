@@ -1,0 +1,55 @@
+= 「言語処理系」の授業で使用したプログラムコード
+:Author: 鹿児島大学 学術情報基盤センター 下園 幸一
+:Email: <simozono@cc.kagoshima-u.ac.jp>
+:doctype: article
+:compat-mode!:
+:source-highlighter: coderay
+:icons: font
+:copyright: Computing and Communications Center, Kagoshima University
+:notitle:
+:sectnums:
+
+ここでは、2018年度に「言語処理系」(鹿児島高専/情報工学科/3年生向け)の授業の
+際に使用したプログラムコードを提示しています。(自分の忘備録を兼ねています)
+
+== コンパイル対象言語
+* PL/0'
+
+== プログラムの説明
+
+=== link:scanner[字句解析器(scannerディレクトリ下)]
+前期の授業の字句解析プログラムです。字句解析器自動生成ツール`lex`を利用して、
+字句解析器を作成しています。
+
+* link:scanner/pl0-scanner.l[「PL/0'」用字句解析器(lex版) (scanner/pl0-scanner.l)]
+
+== 利用方法
+=== Windows Subsystem for Linux (旧名 Bash on Windows on Ubuntsu) について
+Windows (64bit 版 Creators Update 以降)では、Windows Subsystem for Linux を利用すると
+以下を利用することができます。Windows Subsystem for Linux のインストール方法等は
+
+* https://web.chaperone.jp/w/index.php?windows%2FWindows%20Subsystem%20for%20Linux[windows/Windows Subsystem for Linux]
+* http://www.buildinsider.net/enterprise/wsl/01[Windows Subsystem for Linuxとは？
+そのインストールと使い方 - Build Insider]
+
+等を参考にしてください。
+その後、gcc(Cコンパイラ)やflex(字句解析器作成ツール), bison(LALR構文解析器作成ツール)を
+インストールする必要があります。以下にその例を挙げます。
+[source,bash]
+----
+$ sudo apt install build-essential
+$ sudo apt install git flex bison
+----
+
+=== ソースファイルの取得
+
+github からソースファイルを取得します。
+
+[source, bash]
+----
+$ git clone https://github.com/simozono/2018-pl0dash
+$ cd 2018-pl0dash
+$ ls
+README.md  scanner/
+$
+----
