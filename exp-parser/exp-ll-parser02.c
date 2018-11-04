@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
   /* 構文解析スタート S=E */
   parse_E();
   if (nextToken != T_EOF) parse_error("EOFでない");
- 
+
   printf ("END\n");
   exit(EXIT_SUCCESS);
 }

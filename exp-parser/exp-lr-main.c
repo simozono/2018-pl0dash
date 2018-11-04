@@ -25,8 +25,8 @@ int main(int argc, char *argv[]) {
 
   /* 構文解析スタート */
   if (yyparse() != 0) {
-	 printf("構文解析エラー\n");
-	 exit(EXIT_FAILURE);
+    printf("構文解析エラー\n");
+    exit(EXIT_FAILURE);
   }
   printf ("END\n");
   exit(EXIT_SUCCESS);
