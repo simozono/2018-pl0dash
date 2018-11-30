@@ -1,0 +1,24 @@
+const n=5;
+var x;
+
+function expo(x,y)
+  var i, ret;
+  begin
+    i:=1; ret:=1;
+    while i <= y do
+      begin
+        ret:=ret*x;
+        i:=i+1;
+      end;
+    return ret;
+  end;
+
+begin
+  x:=1;
+  while x <= n do
+  begin
+    write expo(x, x);
+    writeln;
+    x:=x+1;
+  end;
+end.

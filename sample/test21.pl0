@@ -1,0 +1,12 @@
+const n = 5;
+var x;
+
+begin
+  x := 1;
+  while x <= n do
+  begin
+    write x * 3; writeln;
+    x := x + 1;
+  end;
+end.
+

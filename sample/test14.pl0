@@ -1,0 +1,10 @@
+const a = 2, b = 3;
+var x, y, z;
+
+begin
+  x := 3 * b /  6 * b;
+  y := x + 2 + b * 2;
+  z := 8 + x * x - 10;
+  write x + y - z;
+  writeln;
+end.

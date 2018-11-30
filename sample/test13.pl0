@@ -1,0 +1,17 @@
+var n, x;
+
+begin
+  n := 20;
+  x := 1;
+  while x <= n do
+  begin
+    if x / 2 >= 5 then
+    begin
+      write x;
+      writeln;
+    end;
+    x := x + 1;
+  end;
+  write 100;
+  writeln;
+end.

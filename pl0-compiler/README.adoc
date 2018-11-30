@@ -1,0 +1,65 @@
+= PL/0'の構文解析器
+:Author: 鹿児島大学 学術情報基盤センター 下園 幸一
+:Email: <simozono@cc.kagoshima-u.ac.jp>
+:doctype: article
+:compat-mode!:
+:source-highlighter: coderay
+:icons: font
+:copyright: Computing and Communications Center, Kagoshima University
+:notitle:
+:sectnums:
+
+== 構文解析器の作成方法
+以下のようにして構文解析器を作成できます。
+
+[source,bash]
+----
+$ cd pl0-compiler
+$ make
+いろいろ画面に出力される
+$
+----
+
+== PL/0'の構文解析器のプログラム(一部未完成版)
+第22回(後期08回)で説明した PL/0'の構文解析器です。授業で説明したように、この構文解析器は
+T_IDが変数名/定数名か関数名かの判定をしていないため、不完全です。
+
+=== ファイルの説明
+link:pl0-ll-parser01.c[LL(1)構文解析器本体: (pl0-ll-parser01.c)]:: 本C言語プログラムが
+LL(1)再帰下降型構文解析器の本体となります。**但し、T_IDは変数名か定数名と判断しています。
+そのため、プログラム中で関数呼び出しを行っていると不適切なエラーを出力し構文解析に失敗します。**
+link:pl0-scanner.l[字句解析用サブルーチン(lex版): (pl0-scanner.l)]:: 本ソースプログラムを
+字句解析器自動生成ツール`lex`が処理し、自動的にC言語で書かれた字句解析サブルーチンが作成されます。
+link:misc.c[エラー処理関数等の定義:(misc.c)]:: エラー出力を行う関数をこのファイルで定義しています。
+link:../sample/test02.pl0[PL/0'サンプルプログラム02:(../sample/test02.pl0)]:: 関数呼び出しを
+使用していないPL/0'のサンプルプログラムです。`pl0-ll-parser01`で構文解析に成功するはずです。
+link:../sample/test03.pl0[PL/0'サンプルプログラム03:(../sample/test03.pl0)]:: 12行目で
+関数呼び出しを使用している PL/0'のサンプルプログラムです。
+そのため、`pl0-ll-parser01`では、12行目で不適切なエラーを出力し、構文解析に失敗します。
+
+=== 実行方法と実行結果
+[source,bash]
+----
+$ ./pl0-ll-parser01 ../sample/test02.pl0
+Enter Program
+Enter Block
+Enter ConstDeclList
+Enter ConstDecl
+Enter ConstIdList
+... 略 ...
+Exit  Statement
+Exit  Block
+Exit  Program
+構文解析は全て成功
+$
+$ ./pl0-ll-parser01 ../sample/test03.pl0
+Enter Program
+Enter Block
+... 略 ...
+Enter Term_dash
+Exit  Term_dash
+Exit  Term
+Enter Expression_dash
+エラー: 12 行目 '('付近: 式がおかしい(E')
+$
+----

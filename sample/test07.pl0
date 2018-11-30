@@ -1,0 +1,28 @@
+const a=5; var b, c;
+
+function func1(x,y)
+  const a=3; var b, c, d;
+  function func2(x,z)
+    const b=2; var y;
+    begin
+      y := 3;
+      return b+y+x+z;
+    end;
+
+  begin
+     b:=2; c:=1; d:=1;
+     return a+b+func2(c,d)+x+y;
+  end;
+
+function func3(x)
+  var y;
+  begin
+    y:=3;
+    return x+y;
+  end;
+
+begin
+  b:=3; c:=2;
+  write a+func1(b,c); writeln;
+  write func1(b,c)+func3(a); writeln;
+end.

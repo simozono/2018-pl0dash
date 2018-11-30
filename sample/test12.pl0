@@ -1,0 +1,12 @@
+const n = 10;
+var x;
+
+begin
+  x := 1;
+  while x <= n do
+  begin
+    write x * x; writeln;
+    x := x + 1;
+  end;
+  write 1; writeln;
+end.

@@ -1,0 +1,14 @@
+const n = 3;
+var x;
+
+begin
+  x := 9;
+  if x > n then
+  begin
+    x := 1;
+    write x;
+    writeln;
+  end;
+  write 0;
+  writeln;
+end.

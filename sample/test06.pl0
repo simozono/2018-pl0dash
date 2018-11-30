@@ -1,0 +1,23 @@
+const n = 10;
+var x;
+
+function square(x)
+begin
+  return x * x;
+end;
+
+function cube(x)
+begin
+  return x * x * x;
+end;
+
+begin
+  while x < n do
+  begin
+    write square(x);
+    writeln;
+    write cube(x);
+    writeln;
+    x := x + 1;
+  end;
+end.
