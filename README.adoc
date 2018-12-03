@@ -24,10 +24,16 @@
 * link:scanner/pl0-scanner.l[「PL/0'」用字句解析器(lex版) (scanner/pl0-scanner.l)]
 
 === link:exp-parser[四則演算用構文解析器(exp-parserディレクトリ下)]
-後期の前半の授業(中間試験前)の構文解析析プログラムです。再帰下降型(LL)構文解析器
+後期の前半の授業(中間試験前)の構文解析プログラムです。再帰下降型(LL)構文解析器
 と上向き構文解析(LALR)器があります。
 
 * link:exp-parser/README.adoc[構文解析器プログラムの説明 (exp-parser/README.adoc)]
+
+=== link:exp-parser[PL/0'用構文解析器(pl0-compilerディレクトリ下)]
+後期の後半の授業(中間試験後)で説明する PL/0' 構文解析プログラムです。再帰下降型(LL)構文解析器
+です。
+
+* link:pl0-complier/README.adoc[構文解析器プログラムの説明 (pl0-compiler/README.adoc)]
 
 == 利用方法
 === Windows Subsystem for Linux (旧名 Bash on Windows on Ubuntsu) について
