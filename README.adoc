@@ -29,7 +29,7 @@
 
 * link:exp-parser/README.adoc[構文解析器プログラムの説明 (exp-parser/README.adoc)]
 
-=== link:exp-parser[PL/0'用構文解析器および完全なコンパイラ(pl0-compilerディレクトリ下)]
+=== link:pl0-compiler[PL/0'用構文解析器および完全なコンパイラ(pl0-compilerディレクトリ下)]
 後期の後半の授業(中間試験後)で説明する PL/0' 構文解析プログラムおよび完全なコンパイラです。
 再帰下降型(LL)構文解析器です。
 
