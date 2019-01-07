@@ -1,4 +1,5 @@
 pl0-ll-parser01
 pl0-ll-parser02
+pl0-ll-compiler01
 *.o
 pl0-scanner-ll.c
