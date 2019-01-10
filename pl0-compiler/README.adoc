@@ -163,3 +163,51 @@ $ ./pl0-ll-compiler01 ../sample/test09.pl0 | ../vcpu/pl0dashvm.rb
 1
 $
 ----
+
+== PL/0'のコンパイラプログラム最終版(関数対応版)
+第27回(後期12回)で説明した PL/0'のコンパイラです。関数(function)にも対応しています。
+
+=== ファイルの説明
+link:pl0-ll-compiler02.c[LL(1)構文解析器本体: (pl0-ll-compiler02.c)]:: 本C言語プログラムが
+LL(1)再帰下降型構文解析を行い、コード生成部を呼び出しています。コンパイラ本体です。
+link:pl0-scanner.l[字句解析用サブルーチン(lex版): (pl0-scanner.l)]:: 前述と同じです。
+link:misc.c[エラー処理関数等の定義:(misc.c)]:: 前述と同じです。
+link:misc.h[エラー処理関数の宣言:(misc.h)]:: 前述と同じです。
+link:codegen.c[アセンブリ言語コード生成部:(codegen.c)]:: 前述と同じです。
+link:codegen.h[アセンブリ言語コード生成部の定義:(codegen.h)]:: 前述と同じです。
+link:symbol_table02.c[記号表および記号表用関数の定義:(symbol_table02.c)]:: 前述と同じです。
+link:symbol_table02.h[記号表用関数の宣言:(symbol_table02.h)]:: 前述と同じです。
+
+=== 実行方法と実行結果
+[source,bash]
+----
+$ ./pl0-ll-compiler02 -h
+./pl0-ll-compiler02 [-h] [-n] [-o output_file] source_file
+$
+$ ./pl0-ll-compiler02 ../sample/test17.pl0
+JMP 57
+PUSH FP
+MOVE SP,FP
+PUSHUP
+PUSHUP
+略
+END
+$
+$ ./pl0-ll-compiler01 -n ../sample/test09.pl0
+   1 JMP 57
+   2 PUSH FP
+   3 MOVE SP,FP
+   4 PUSHUP
+   5 PUSHUP
+略
+  90 JMP 61
+  91 END
+$
+$ ./pl0-ll-compiler02 ../sample/test17.pl0 | ../vcpu/pl0dashvm.rb
+1
+4
+27
+256
+31251
+$
+----
