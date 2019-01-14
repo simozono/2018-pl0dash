@@ -33,7 +33,7 @@
 後期の後半の授業(中間試験後)で説明する PL/0' 構文解析プログラムおよび完全なコンパイラです。
 再帰下降型(LL)構文解析器です。
 
-* link:pl0-compiler/README.adoc[構文解析器プログラムの説明 (pl0-compiler/README.adoc)]
+* link:pl0-compiler/README.adoc[構文解析器および完全なコンパイラプログラムの説明 (pl0-compiler/README.adoc)]
 
 == 利用方法
 === Windows Subsystem for Linux (旧名 Bash on Windows on Ubuntsu) について
